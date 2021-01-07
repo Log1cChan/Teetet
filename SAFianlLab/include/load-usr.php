@@ -17,6 +17,8 @@
     }else{
         echo "No such a USERID!";
     }
+    echo "<script>alert('Hello')</script>";#
+    
 //     $row = mysqli_fetch_assoc($check_query);
 //     $usrname = $row['usr_name'];
 //     echo "<p>";

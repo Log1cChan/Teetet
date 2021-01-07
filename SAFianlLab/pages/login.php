@@ -27,6 +27,17 @@
 </script>
 </head>
 <body>
+  <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="login.php">Ajax聊天室</a>
+            </div>
+            <div class="pull-right">
+                <a href="login.php">登录<span class="sr-only">(current)</span></a>
+                <a href="register.php"> 注册</a>
+            </div>
+        </div>
+    </nav>
   <div>
       <center>
         <form>
