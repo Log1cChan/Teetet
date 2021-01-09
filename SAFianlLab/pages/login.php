@@ -1,5 +1,8 @@
 <?php
-    include '../include/db.php'
+  session_start();
+  $_SESSION["iflog"] = 0;
+  $_SESSION["online"] = -1;
+  include '../include/db.php'
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,22 +49,14 @@
             <input type="button" class="btn btn-primary" id="login" value="登陆"/>
         </form>
         <div id="com">
-        <?php
-              $sql = "SELECT * FROM usr_info";
-              $result = mysqli_query($conn, $sql);
-              if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_assoc($result)){
-                    echo "<p>";
-                    echo $row['usr_id'], ' ', $row['usr_name'], ' ', $row['psw'];
-                    echo "</p>";
-                }
-            }else  {
-                echo "There is no usr_info!";
-            }
-            ?>
         </div>
       </center>
   </div>
+  <?php
+    if($_SESSION['iflog']==1){
+      header("location:main.php" );
+    }
+  ?>
 </body>
 </html>
 

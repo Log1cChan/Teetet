@@ -17,10 +17,11 @@
     $("#regist").click(function(){
       var usr_id = document.getElementById("usr_id").value;
       var psw = document.getElementById("psw").value;
-      console.log(usr_id);
-      console.log(psw);
-      $("#com").load("Register.php" ,{
+      var usr_name = document.getElementById("usr_name").value;
+      console.log(usr_id, usr_name, psw);
+      $("#com").load("../include/check.php" ,{
         usr_id: usr_id,
+        usr_name: usr_name,
         psw: psw
       });
     });
@@ -47,13 +48,10 @@
               <p>密 &nbsp;&nbsp;&nbsp;码: &nbsp;<input type="password" id="psw" placeholder="Please Enter your Password"/></p>
               <input class="btn btn-primary" type="button" id="regist" value="注册" />
           </form>
+        <div id="com">
+
+        </div>
         </center>
     </div>
-    <?php
-        // $sql = "SELECT * FROM usr_info WHERE usr_id = $('#usr_id')";
-        // $result = mysqli_query($conn, $sql);
-        $usr_id = $_POST['usr_id'];
-        echo $usr_id;
-    ?>
 </body>
 </html>
